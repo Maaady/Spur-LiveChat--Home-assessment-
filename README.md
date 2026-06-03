@@ -83,10 +83,3 @@ The frontend Vite server prints the local URL (default: `http://localhost:4173`)
 - Add authentication, conversation lists, or message search.
 - Improve prompt engineering or add FAQ retrieval for more deterministic answers.
 
-## License
-
-This project is provided as-is for demonstration purposes.
-
----
-If you want, I can commit this README and open a branch for you. Tell me if you'd like that.
-*** End Patch
