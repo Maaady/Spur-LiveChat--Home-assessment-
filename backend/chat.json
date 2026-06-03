@@ -1,0 +1,119 @@
+{
+  "conversations": [
+    {
+      "id": "a315f3c8-e4ae-4451-bb2a-7194e5e95cc5",
+      "createdAt": "2026-06-03T16:53:04.440Z"
+    },
+    {
+      "id": "df92ab3b-0edc-4cef-8688-14ec86d51b0f",
+      "createdAt": "2026-06-03T16:55:34.585Z"
+    },
+    {
+      "id": "e7c311e9-7587-4dda-8f05-4b91876c4d31",
+      "createdAt": "2026-06-03T17:04:22.564Z"
+    },
+    {
+      "id": "bc6ea9df-9ba2-4abe-99a3-b59630383d08",
+      "createdAt": "2026-06-03T17:05:39.063Z"
+    },
+    {
+      "id": "4795408c-7e5e-4756-9861-188f2ebd5a2a",
+      "createdAt": "2026-06-03T17:10:40.064Z"
+    },
+    {
+      "id": "e4d28f9c-7b44-4c40-9208-5ef7dfc92860",
+      "createdAt": "2026-06-03T17:28:04.292Z"
+    },
+    {
+      "id": "6d94f6c4-f459-428d-a4c8-192c6c834bb3",
+      "createdAt": "2026-06-03T17:28:22.583Z"
+    },
+    {
+      "id": "612cd65d-583a-439c-b66c-cc6c900ca020",
+      "createdAt": "2026-06-03T17:28:34.024Z"
+    },
+    {
+      "id": "72dce2dc-5739-4d6d-85ba-377b6899fdf6",
+      "createdAt": "2026-06-03T17:33:18.039Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "193752f6-4447-4206-8657-ac8110df140d",
+      "conversationId": "a315f3c8-e4ae-4451-bb2a-7194e5e95cc5",
+      "sender": "user",
+      "text": "hi",
+      "createdAt": "2026-06-03T16:53:04.440Z"
+    },
+    {
+      "id": "74d83234-4b40-4959-93c2-e9033e74db01",
+      "conversationId": "df92ab3b-0edc-4cef-8688-14ec86d51b0f",
+      "sender": "user",
+      "text": "hi",
+      "createdAt": "2026-06-03T16:55:34.585Z"
+    },
+    {
+      "id": "66ca4247-d4d9-4dd7-b1f9-0e127164977d",
+      "conversationId": "e7c311e9-7587-4dda-8f05-4b91876c4d31",
+      "sender": "user",
+      "text": "hi",
+      "createdAt": "2026-06-03T17:04:22.564Z"
+    },
+    {
+      "id": "ffd55e4c-593f-425a-a3bd-1322594639c0",
+      "conversationId": "bc6ea9df-9ba2-4abe-99a3-b59630383d08",
+      "sender": "user",
+      "text": "hi",
+      "createdAt": "2026-06-03T17:05:39.063Z"
+    },
+    {
+      "id": "70eb22b4-7f4e-4505-98cc-6b15463bf2cd",
+      "conversationId": "4795408c-7e5e-4756-9861-188f2ebd5a2a",
+      "sender": "user",
+      "text": "hi4",
+      "createdAt": "2026-06-03T17:10:40.065Z"
+    },
+    {
+      "id": "4af9190a-3d16-42e5-8dc9-7142ebbe4434",
+      "conversationId": "e4d28f9c-7b44-4c40-9208-5ef7dfc92860",
+      "sender": "user",
+      "text": "hi",
+      "createdAt": "2026-06-03T17:28:04.293Z"
+    },
+    {
+      "id": "4cabefd9-81aa-4e09-a813-2c3dc2aebf39",
+      "conversationId": "6d94f6c4-f459-428d-a4c8-192c6c834bb3",
+      "sender": "user",
+      "text": "shipping",
+      "createdAt": "2026-06-03T17:28:22.583Z"
+    },
+    {
+      "id": "b72d73d9-2f57-4412-b3a9-b1f00cb8b6ca",
+      "conversationId": "612cd65d-583a-439c-b66c-cc6c900ca020",
+      "sender": "user",
+      "text": "order",
+      "createdAt": "2026-06-03T17:28:34.024Z"
+    },
+    {
+      "id": "4516f5c3-8f8b-4401-9221-682f0dde8f28",
+      "conversationId": "72dce2dc-5739-4d6d-85ba-377b6899fdf6",
+      "sender": "user",
+      "text": "orders",
+      "createdAt": "2026-06-03T17:33:18.040Z"
+    },
+    {
+      "id": "e76d67ce-409a-422c-a07f-6958c8af62b5",
+      "conversationId": "72dce2dc-5739-4d6d-85ba-377b6899fdf6",
+      "sender": "ai",
+      "text": "I’m running in fallback mode because OPENAI_API_KEY is not configured. Please set the key in backend/.env to enable full AI replies.",
+      "createdAt": "2026-06-03T17:33:18.042Z"
+    },
+    {
+      "id": "d008b785-5dc6-4786-8a09-55e4dd980ded",
+      "conversationId": "72dce2dc-5739-4d6d-85ba-377b6899fdf6",
+      "sender": "user",
+      "text": "orders",
+      "createdAt": "2026-06-03T17:40:22.466Z"
+    }
+  ]
+}
