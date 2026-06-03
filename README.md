@@ -1,128 +1,107 @@
 # Spur Live Chat
 
-Lightweight AI-powered support chat demo (TypeScript backend + React + Vite frontend).
+A lightweight AI-powered support chat demo built with TypeScript (backend) and React + Vite (frontend).
 
-This repository contains a simple local chat app that demonstrates:
-- a small Express + TypeScript backend
-- a React + Vite frontend
-- basic persistence using a JSON store
-- optional OpenAI integration (fallback responses included)
+## Overview
 
-## Quick start (local)
+This project demonstrates a simple local chat application featuring:
+- **Backend**: Express server with TypeScript
+- **Frontend**: React application with Vite
+- **Data Persistence**: JSON-based storage
+- **AI Integration**: Optional OpenAI integration with built-in fallback responses
 
-Prerequisites
-- Node.js 18+ and npm
+## Prerequisites
 
-1) Install dependencies
+- Node.js 18+
+- npm
+
+## Quick Start
+
+### 1. Install Dependencies
 
 ```bash
+# Install backend dependencies
 cd backend
 npm install
 
+# Install frontend dependencies
 cd ../frontend
 npm install
 ```
 
-2) Configure environment
+### 2. Configure Environment
 
-Copy and edit the backend env file:
+Create and configure the backend environment file:
 
 ```bash
 cd backend
-copy .env.example .env   # Windows PowerShell: Copy-Item .env.example .env
-# then open backend/.env and set OPENAI_API_KEY (optional)
+cp .env.example .env  # or: Copy-Item .env.example .env (Windows PowerShell)
 ```
 
-Notes:
-- If `OPENAI_API_KEY` is not set, the backend will return safe fallback replies for common support questions.
-- To enable full AI replies, set `OPENAI_API_KEY=sk-...` in `backend/.env`.
+Then edit `backend/.env` and set your OpenAI API key (optional):
+```
+OPENAI_API_KEY=sk-...
+```
 
-3) Run servers (separate terminals)
+**Note**: If `OPENAI_API_KEY` is not set, the backend will use safe fallback responses for common support questions.
 
-Backend (terminal A):
-```powershell
+### 3. Run the Application
+
+Open two terminal windows and run:
+
+**Terminal 1 (Backend)**:
+```bash
 cd backend
 npm run dev
 ```
 
-Frontend (terminal B):
-```powershell
+**Terminal 2 (Frontend)**:
+```bash
 cd frontend
 npm run dev
 ```
 
-You can also run both from the workspace root:
-
-```powershell
+Alternatively, run both from the workspace root:
+```bash
 npm --prefix backend run dev
 npm --prefix frontend run dev
 ```
 
-The frontend Vite server prints the local URL (default: `http://localhost:4173`). The backend listens on `http://localhost:4000` by default.
+The frontend will be available at `http://localhost:4173` and the backend API at `http://localhost:4000`.
 
-## How it works (short)
+## How It Works
 
-- Backend: `backend/src/index.ts` exposes routes for session history and posting messages. `backend/src/llm.ts` handles OpenAI calls and now includes a local fallback generator when the API key is missing. `backend/src/db.ts` persists messages to `backend/chat.json`.
-- Frontend: `frontend/src/App.tsx` handles the chat UI, session persistence (localStorage), and API calls to the backend.
+### Backend
+- `backend/src/index.ts`: Exposes REST API routes for session history and message posting
+- `backend/src/llm.ts`: Handles OpenAI API calls with a local fallback generator when no API key is configured
 
-## Environment variables
+### Frontend
+- `frontend/src/App.tsx`: Chat UI, local storage session persistence, and API integration
 
-- `backend/.env` (create from `.env.example`)
-  - `OPENAI_API_KEY` — optional; set to get full OpenAI-powered replies.
-- `frontend/.env` / `VITE_API_BASE_URL` — override backend URL if needed (defaults to `http://localhost:4000`).
+## Environment Variables
 
-## Troubleshooting
-
-- If the frontend shows: "I’m running in fallback mode because OPENAI_API_KEY is not configured": add your key to `backend/.env` and restart the backend.
-- If `EADDRINUSE` appears, stop the process using that port or change `PORT` in `backend/.env`.
-- If dependencies fail, verify Node.js 18+ and rerun `npm install` in both folders.
-
-## What you can change
-
-- Swap the JSON store for a real database (SQLite, Postgres).
-- Add authentication, conversation lists, or message search.
-- Improve prompt engineering or add FAQ retrieval for more deterministic answers.
-
-## License
-
-This project is provided as-is for demonstration purposes.
-
-- Deploy with Docker
-
----
-
-**License:** MIT
-=======
-The frontend Vite server prints the local URL (default: `http://localhost:4173`). The backend listens on `http://localhost:4000` by default.
-
-## How it works (short)
-
-- Backend: `backend/src/index.ts` exposes routes for session history and posting messages. `backend/src/llm.ts` handles OpenAI calls and now includes a small local fallback generator when the API key is missing. `backend/src/db.ts` persists messages to `backend/chat.json`.
-- Frontend: `frontend/src/App.tsx` handles the chat UI, session persistence (localStorage), and API calls to the backend.
-
-## Environment variables
-
-- `backend/.env` (create from `.env.example`)
-  - `OPENAI_API_KEY` — optional; set to get full OpenAI-powered replies.
-- `frontend/.env` / `VITE_API_BASE_URL` — override backend URL if needed (defaults to `http://localhost:4000`).
+| Variable | Location | Purpose |
+|----------|----------|---------|
+| `OPENAI_API_KEY` | `backend/.env` | Optional; enables full OpenAI-powered responses |
+| `VITE_API_BASE_URL` | `frontend/.env` | Override backend URL (defaults to `http://localhost:4000`) |
 
 ## Troubleshooting
 
-- If the frontend shows: "I’m running in fallback mode because OPENAI_API_KEY is not configured": add your key to `backend/.env` and restart the backend.
-- If TypeScript reports deprecation warnings about `moduleResolution` or similar, ensure you are using Node-compatible `tsconfig` settings; the project includes configuration adjusted for NodeNext.
-- If `EADDRINUSE` appears, stop the process using that port or change `PORT` in `backend/.env`.
+| Issue | Solution |
+|-------|----------|
+| "I'm running in fallback mode..." message | Add your OpenAI API key to `backend/.env` and restart the backend |
+| `EADDRINUSE` port error | Stop the process using that port or change `PORT` in `backend/.env` |
+| Dependencies fail to install | Verify Node.js 18+ is installed and run `npm install` again in both directories |
+| TypeScript warnings about `moduleResolution` | Project uses NodeNext configuration; ensure your tsconfig is compatible |
 
-## What you can change
+## Future Enhancements
 
-- Swap the JSON store for a real database (SQLite, Postgres).
-- Add authentication, conversation lists, or message search.
-- Improve prompt engineering or add FAQ retrieval for more deterministic answers.
+- Replace JSON store with a real database (SQLite, Postgres, MongoDB)
+- Add user authentication and authorization
+- Implement conversation lists and message search
+- Enhance prompt engineering or add FAQ retrieval for more consistent answers
+- Add Docker support for easier deployment
 
 ## License
 
-This project is provided as-is for demonstration purposes.
-
----
-If you want, I can commit this README and open a branch for you. Tell me if you'd like that.
-*** End Patch
->>>>>>> 186baca (First commit)
+MIT - This project is provided as-is for demonstration purposes.
